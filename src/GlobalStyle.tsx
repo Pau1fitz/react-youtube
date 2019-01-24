@@ -1,8 +1,12 @@
-import { createGlobalStyle } from "styled-components/macro";
-import { normalize } from "polished";
+import { createGlobalStyle } from 'styled-components/macro';
+import { normalize } from 'polished';
 
 export const GlobalStyle = createGlobalStyle`
 	${normalize()};
+
+	body {
+		font-family: 'Roboto', sans-serif;
+	}
 
 	html, body, div, span,
 	h1, h2, p, a, ul, li,
@@ -12,7 +16,6 @@ export const GlobalStyle = createGlobalStyle`
 		padding: 0;
 		border: 0;
 		font-size: 100%;
-		font: inherit;
 		vertical-align: baseline;
 	}
 

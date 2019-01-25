@@ -3,6 +3,8 @@ import styled from 'styled-components/macro';
 import TimeAgo from 'timeago-react';
 import Time from './Time';
 import Number from './Number';
+import { useAPIRequest } from '../api';
+import LoadingIndicator from './LoadingIndicator';
 
 const Wrapper = styled.section``;
 
@@ -65,21 +67,17 @@ const Details = styled.p`
 const API_KEY = 'AIzaSyAXo-YsLg3RfGrQ3NWIX4D2DYyMF-aleO4';
 
 const Trending = () => {
-	const [results, setResults] = useState<any>(undefined);
-	useEffect(() => {
-		fetch(
-			`https://www.googleapis.com/youtube/v3/videos?part=contentDetails,snippet,statistics&chart=mostPopular&&maxResults=25&key=${API_KEY}`
-		)
-			.then((res: any) => {
-				return res.json();
-			})
-			.then(res => {
-				setResults(res.items);
-			});
-	}, []);
+	const { data: results = [], isLoading } = useAPIRequest(
+		`https://www.googleapis.com/youtube/v3/videos?part=contentDetails,snippet,statistics&chart=mostPopular&&maxResults=25&key=${API_KEY}`
+	);
+
+	if (isLoading) {
+		return <LoadingIndicator />;
+	}
+
 	return (
 		<Wrapper>
-			{results &&
+			{!isLoading &&
 				results.map((result: any) => {
 					return (
 						<Result key={result.snippet.description}>

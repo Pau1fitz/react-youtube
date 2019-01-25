@@ -1,6 +1,10 @@
 import React from 'react';
 
-function Number({ number }: any) {
+type Props = {
+	number: string;
+};
+
+function Number({ number }: Props) {
 	const num = parseInt(number);
 	var si = [
 		{ value: 1, symbol: '' },

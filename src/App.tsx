@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import styled from 'styled-components/macro';
-import SideMenu from './components/SideMenu';
-import Trending from './components/Trending';
+import React, { useState } from 'react'
+import styled from 'styled-components/macro'
+import SideMenu from './components/SideMenu'
+import Trending from './components/Trending'
 
 const Main = styled.main`
 	display: flex;

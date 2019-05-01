@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 
 type Props = {
 	number: string;
-};
+}
 
 function Number({ number }: Props) {
 	const num = parseInt(number);
@@ -22,7 +22,7 @@ function Number({ number }: Props) {
 			break;
 		}
 	}
-	return <>{(num / si[i].value).toFixed(1).replace(rx, '$1') + si[i].symbol}</>;
+	return <React.Fragment>{(num / si[i].value).toFixed(1).replace(rx, '$1') + si[i].symbol}</React.Fragment>
 }
 
-export default Number;
+export default Number

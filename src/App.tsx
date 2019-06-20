@@ -6,7 +6,7 @@ import Trending from './components/Trending'
 const Main = styled.main`
 	display: flex;
 	flex: 1;
-`;
+`
 
 const App = () => {
 	const [search, setSearch] = useState<string>('');

@@ -10,6 +10,6 @@ ReactDOM.render(
     <App />
   </div>,
   document.getElementById("root")
-);
+)
 
 serviceWorker.unregister()

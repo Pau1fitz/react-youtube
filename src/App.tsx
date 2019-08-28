@@ -9,7 +9,7 @@ const Main = styled.main`
 `
 
 const App = () => {
-	const [search, setSearch] = useState<string>('');
+	const [search, setSearch] = useState<string>('')
 
 	return (
 		<div>
@@ -26,6 +26,6 @@ const App = () => {
 			</Main>
 		</div>
 	);
-};
+}
 
-export default App;
+export default App

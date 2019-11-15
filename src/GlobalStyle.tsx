@@ -39,8 +39,6 @@ export const GlobalStyle = createGlobalStyle`
 		height: 100%;
 		font-size: 16px;
 		line-height: 1.345;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
 	}
 
 	#root {
